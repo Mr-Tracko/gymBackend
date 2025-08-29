@@ -14,8 +14,7 @@ const PORT = process.env.PORT || 8001;
 // CORS configuration - allow both localhost and your Vercel frontend
 app.use(cors({
     origin: [
-        'http://localhost:5173', 
-        'http://localhost:3000',
+        'https://gym-frontend-taupe.vercel.app/', 
         'https://fitness-tracker-v4.vercel.app',
         'https://your-frontend-domain.vercel.app' // Replace with your actual frontend URL
     ],

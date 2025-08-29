@@ -1,3 +1,4 @@
+require("dotenv").config(); 
 const path = require("path");
 const express = require("express");
 const cors = require('cors');
@@ -9,12 +10,14 @@ const cookieParser = require("cookie-parser");
 const { checkForAuthenticationCookie, checkForBearerToken } = require("./middlewares/authentication");
 
 const app = express();
-const PORT = process.env.PORT || 8001;
+const PORT = process.env.PORT ;
+// const PORT = process.env.PORT || 8001;
 
 // CORS configuration - allow both localhost and your Vercel frontend
 app.use(cors({
     origin: [
         'https://gym-frontend-taupe.vercel.app/', 
+        'http://localhost:5173/', 
         'https://fitness-tracker-v4.vercel.app',
         'https://your-frontend-domain.vercel.app' // Replace with your actual frontend URL
     ],

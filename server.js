@@ -35,10 +35,10 @@ app.use(checkForAuthenticationCookie("token"));
 app.use(express.static(path.resolve("./public")));
 
 // MongoDB Connection with Error Handling
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/gymone";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI)
-    .then(() => console.log("MongoDB connected successfully"))
+    .then(() => console.log("MongoDB Atlas connected successfully"))
     .catch(err => {
         console.error("MongoDB connection error:", err);
         process.exit(1);
